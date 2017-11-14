@@ -1,0 +1,97 @@
+﻿@model IList<PruebaCI2.Models.UsuarioModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - Gestionar usuarios</title>
+    <script src="@Url.Content("~/Content/js/jquery-3.2.1.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/bootstrap.bundle.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/less.min.js")"></script>
+    <link href="@Url.Content("~/Content/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/main.less")" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="page_main"> 
+        @Html.Partial("~/Views/Template/cabecera.cshtml")
+        <section id="cuerpo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="sub-container-max">
+                            <form method="post" action="Usuario/Consultar">
+                                <div class="form-group row">
+                                    @Html.Label("lblBuscar",new { @class= "col-sm-2 col-form-label" })
+                                    <div class="col-sm-5">
+                                        @Html.TextBox("Buscar", null, new { @class = "form-control", placeholder = "Busqueda general" })
+                                    </div>
+                                    <div class="col-sm-5">
+                                        @Html.DropDownList("Filtro", new SelectList(
+                                                            new List<Object>{
+                                                                new { value = "nombre" , text = "Nombre"  },
+                                                                new { value = "Usuario" , text = "Usuario" }
+                                                            },
+                                                            "value",
+                                                            "text",
+                                                            2), "Seleccione del filtro...", new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="form-group row">
+                                    <div class="col-sm-5 offset-md-2">
+                                        <button type="submit" class="btn btn-primary">Buscar</button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-7">
+                        <div class="subcol">
+                            <table class="table">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Codigo</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Usuario de acceso</th>
+                                        <th scope="col">Contraseña</th>
+                                        <th scope="col"><img src="@Url.Content("~/Content/images/edit.png")" class="icon" /></th>
+                                        <th scope="col"><img src="@Url.Content("~/Content/images/delete.png")" class="icon" /></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        if (Model != null)
+                                        {
+                                            foreach (var usuario in Model)
+                                            {
+                                                <tr class="table-info">
+                                                    <th scope="row">@usuario.Codigo</th>
+                                                    <td>@usuario.Nombre</td>
+                                                    <td>@usuario.Usuario</td>
+                                                    <td>**********</td>
+                                                    <td><a href="@Url.Action("CargarActualizar", "Usuario",new {id = usuario.Codigo})"><img src="@Url.Content("~/Content/images/edit.png")" class="icon" /></a></td>
+                                                    <td><a href="@Url.Action("Eliminar", "Usuario",new {id = usuario.Codigo})"><img src="@Url.Content("~/Content/images/delete.png")" class="icon" /></a></td>
+
+                                                </tr>
+                                            }
+                                        }
+
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+             </div>
+        </section>
+        @Html.Partial("~/Views/Template/piepagina.cshtml")
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\csc.exe
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\csc.exe.config
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\csc.rsp
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\csi.exe
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\csi.rsp
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\System.AppContext.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\System.Collections.Immutable.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\System.IO.FileSystem.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\System.Reflection.Metadata.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\vbc.exe
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\vbc.exe.config
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\vbc.rsp
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\VBCSCompiler.exe
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\roslyn\VBCSCompiler.exe.config
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\PruebasUnitarias.Tests.dll.config
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\PruebasUnitarias.Tests.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\PruebasUnitarias.Tests.pdb
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\Capa de datos.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\Capa de negocio.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\PruebaCI2.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\EntityFramework.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\System.Web.Mvc.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\System.Web.Razor.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\System.Web.WebPages.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\Capa de datos.pdb
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\Capa de datos.dll.config
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\Capa de negocio.pdb
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\Capa de negocio.dll.config
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\PruebaCI2.pdb
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\PruebaCI2.dll.config
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\EntityFramework.xml
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\System.Web.Mvc.xml
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\System.Web.Razor.xml
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\System.Web.WebPages.xml
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\es\System.Web.Mvc.resources.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\es\System.Web.Razor.resources.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\es\System.Web.WebPages.resources.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\bin\Debug\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\obj\Debug\PruebasUnitarias.csprojResolveAssemblyReference.cache
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\obj\Debug\PruebasUnitarias.Tests.dll
+C:\Users\hp\Desktop\Prueba CI2\PruebaCI2\PruebasUnitarias.Tests\obj\Debug\PruebasUnitarias.Tests.pdb

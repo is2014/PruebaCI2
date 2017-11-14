@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - Principal</title>
+    <script src="@Url.Content("~/Content/js/jquery-3.2.1.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/bootstrap.bundle.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/less.min.js")"></script>
+    <link href="@Url.Content("~/Content/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/main.less")" rel="stylesheet" type="text/css" />
+    
+</head>
+<body>
+    <div id="page_main">
+        
+        @Html.Partial("~/Views/Template/cabecera.cshtml")
+        <section id="cuerpo">
+            <div class="container">
+                <div class="sub-container">
+                    <div class="sub-container-head">
+                        <img src="@Url.Content("~/Content/images/work.png")" height="100"/>
+                    </div>
+                    <div class="sub-container-body">
+                        <a href="@Url.Action("IraVista", "Tarea",new { page = "insertar_tarea"})" class="btn btn-primary btn-lg btn-block " role="button" aria-pressed="true">Agregar Tarea <span class="badge badge-pill badge-warning"> <img src="@Url.Content("~/Content/images/plus.png")" height="12" width="12" /> </span> </a>
+                        <a href="@Url.Action("IraVista", "Tarea",new { page = "consultar_tareas"})" class="btn btn-success btn-lg btn-block " role="button" aria-pressed="true">Consultar Tareas <span class="badge badge-pill badge-primary"><img src="@Url.Content("~/Content/images/search.png")" height="12" width="12" /></span></a>
+                        <a href="@Url.Action("IraVista", "Tarea",new { page = "consultar_tareas"})" class="btn btn-warning btn-lg btn-block " role="button" aria-pressed="true">Eliminar Tareas <span class="badge badge-pill badge-danger"><img src="@Url.Content("~/Content/images/remove.png")" height="12" width="12" /></span></a>
+                        <a href="@Url.Action("IraVista", "Usuario",new { page = "insertar_usuario"})" class="btn btn-primary btn-lg btn-block " role="button" aria-pressed="true">Agregar Usuario <span class="badge badge-pill badge-danger"><img src="@Url.Content("~/Content/images/plus.png")" height="12" width="12" /></span></a>
+                        <a href="@Url.Action("IraVista", "Usuario",new { page = "gestionar_usuarios"})" class="btn btn-success btn-lg btn-block " role="button" aria-pressed="true">Consultar Usuario <span class="badge badge-pill badge-primary"><img src="@Url.Content("~/Content/images/search.png")" height="12" width="12" /></span></a>
+                        <a href="@Url.Action("IraVista", "Usuario",new { page = "gestionar_usuarios"})" class="btn btn-warning btn-lg btn-block " role="button" aria-pressed="true">Eliminar Usuario <span class="badge badge-pill badge-primary"><img src="@Url.Content("~/Content/images/remove.png")" height="12" width="12" /></span></a>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </section>
+        @Html.Partial("~/Views/Template/piepagina.cshtml")
+    </div>
+</body>
+</html>

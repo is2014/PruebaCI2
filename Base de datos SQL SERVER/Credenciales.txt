@@ -1,0 +1,3 @@
+Data source: localhost\SQLEXPRESS
+Nombre instancia: SQLEXPRESS
+Cadena de conexion:Server=localhost\SQLEXPRESS;Database=BD_PRUEBACI2;Trusted_Connection=True;

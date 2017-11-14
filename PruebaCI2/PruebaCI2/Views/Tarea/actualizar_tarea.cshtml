@@ -1,0 +1,85 @@
+﻿@model PruebaCI2.Models.TareaModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @{
+        //Condicion de sesion en Front-End (en Back-end tambien se valida usuario)
+        if (Session["user"] == null)
+        {
+            <meta http-equiv="refresh" content="0; URL='@Url.Action("Index", "Usuario")' " />
+        }
+    }
+    <title>@ViewBag.Title - Actualizar Tarea</title>
+    <script src="@Url.Content("~/Content/js/jquery-3.2.1.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/bootstrap.bundle.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/less.min.js")"></script>
+    <link href="@Url.Content("~/Content/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/main.less")" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <div id="page_main">
+        @Html.Partial("~/Views/Template/cabecera.cshtml")
+        <section id="cuerpo">
+            <div class="container">
+                <div class="sub-container">
+                    <div class="sub-container-head">
+                        <img src="@Url.Content("~/Content/images/addwork.png")" height="100" />
+                    </div>
+                    <div class="sub-container-body">
+                        <form class="container" method="post" action="Actualizar">
+                            <div class="row">
+                                <div class="col-md-12 mb-6">
+                                    @Html.HiddenFor(model => model.Codigo)
+                                    <center>@Html.LabelFor(model => model.Descripcion)</center>
+                                    @Html.TextBoxFor(model => model.Descripcion, null, new { @class = "form-control", placeholder = "Descripcion de la tarea" })
+                                    <center>@Html.ValidationMessage("descripcion_act_mensaje", new { @class = "label label-danger" })</center>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-6">
+                                    <center>@Html.LabelFor(model => model.Estado)</center>
+                                    @Html.DropDownListFor(model => model.Estado, new SelectList(
+                                                            new List<Object>{
+                                                                new { value = "SI" , text = "SI"  },
+                                                                new { value = "NO" , text = "NO" }
+                                                            },
+                                                            "value",
+                                                            "text",
+                                                            2), "Se encuentra finalizada...", new { @class = "form-control" })
+                                    <center>@Html.ValidationMessage("estado_act_mensaje", new { @class = "label label-danger" })</center>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-6">
+                                    <center>@Html.LabelFor(model => model.Fecha_vencimiento)</center>
+                                    @Html.TextBoxFor(model => model.Fecha_vencimiento, null, new { @class = "form-control", placeholder = "dd/mm/aaaa" })
+                                </div>
+                                <center>@Html.ValidationMessage("fecha_act_mensaje", new { @class = "label label-danger" })</center>
+                            </div>
+                            <center><button class="btn btn-primary" type="submit">Actualizar</button></center>
+
+                        </form>
+                    </div>
+
+
+                </div>
+                @Html.Raw(TempData["actualiza"])
+            </div>
+        </section>
+        @Html.Partial("~/Views/Template/piepagina.cshtml")
+    </div>
+</body>
+</html>
+
+
+

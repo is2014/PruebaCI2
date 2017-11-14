@@ -1,0 +1,68 @@
+﻿@model PruebaCI2.Models.UsuarioModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - Registrar Tarea</title>
+    <script src="@Url.Content("~/Content/js/jquery-3.2.1.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/bootstrap.bundle.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/less.min.js")"></script>
+    <link href="@Url.Content("~/Content/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/main.less")" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <div id="page_main">
+        @Html.Partial("~/Views/Template/cabecera.cshtml")
+        <section id="cuerpo">
+            <div class="container">
+                <div class="sub-container">
+                    <div class="sub-container-head">
+                        <img src="@Url.Content("~/Content/images/adduser.png")" height="100" />
+                    </div>
+                    <div class="sub-container-body">
+                        <form class="container" method="post" action="Usuario/Actualizar">
+                            <div class="row">
+                                @Html.HiddenFor(model => model.Codigo)
+                                <div class="col-md-12 mb-6">
+                                    <center>@Html.LabelFor(model => model.Nombre)</center>
+                                    @Html.TextBoxFor(model => model.Nombre, null, new { @class = "form-control", placeholder = "Nombre" })
+                                    <center>@Html.ValidationMessage("nombre_usr_mensaje", new { @class = "label label-danger" })</center>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-6">
+                                    <center>@Html.LabelFor(model => model.Usuario)</center>
+                                    @Html.TextBoxFor(model => model.Usuario, null, new { @class = "form-control", placeholder = "Usuario" })
+                                    <center>@Html.ValidationMessage("usario_usr_mensaje", new { @class = "label label-danger" })</center>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-6">
+                                    <center>@Html.LabelFor(model => model.Contrasena)</center>
+                                    @Html.PasswordFor(model => model.Contrasena, new { @class = "form-control", placeholder = "********" })
+                                    <center>@Html.ValidationMessage("contrasena_usr_mensaje", new { @class = "label label-danger" })</center>
+                                </div>
+                            </div>
+                            <center><button class="btn btn-primary" type="submit">Agregar</button></center>
+
+                        </form>
+                    </div>
+
+
+                </div>
+                @Html.Raw(TempData["Actualiza_usr"])
+            </div>
+        </section>
+        @Html.Partial("~/Views/Template/piepagina.cshtml")
+    </div>
+</body>
+</html>

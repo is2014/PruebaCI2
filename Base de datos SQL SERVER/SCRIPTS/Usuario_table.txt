@@ -1,0 +1,27 @@
+USE [BD_PRUEBACI2]
+GO
+
+/****** Object:  Table [dbo].[Usuarios]    Script Date: 14/11/2017 11:08:02 a.m. ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Usuarios](
+	[Codigo_user] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
+	[Usuario] [nchar](20) NOT NULL,
+	[Contrasena] [varchar](50) NOT NULL,
+	[nombre] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Usuarios] PRIMARY KEY CLUSTERED 
+(
+	[Codigo_user] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+ CONSTRAINT [IX_Usuarios] UNIQUE NONCLUSTERED 
+(
+	[Usuario] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+

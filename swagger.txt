@@ -1,0 +1,142 @@
+swagger: "2.0"
+info:
+  description: "Servicio web para acceder a datos de tareas"
+  version: "1.0.0"
+  title: "Servicios web Tareas"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "apiteam@swagger.io"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "petstore.swagger.io"
+basePath: "/v2"
+tags:
+- name: "tareas"
+  description: "Operaciones acerca de tareas"
+schemes:
+- "http"
+paths:
+
+  /tarea/crear:
+    post:
+      tags:
+      - "tareas"
+      summary: "Crear tarea"
+      description: "Esta operacion solo puede ser realizada si el usuario esta logueado"
+      operationId: "crearTarea"
+      produces:
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Objeto Tarea"
+        required: true
+        schema:
+          $ref: "#/definitions/Tarea"
+      responses:
+        default:
+          description: "Tarea creada con exito"
+  /tarea/actualizar:
+    post:
+      tags:
+      - "tareas"
+      summary: "Actualizar tarea"
+      description: "Esta operacion solo puede ser realizada si el usuario esta logueado y si fue el mismo usuario que la creó"
+      operationId: "ActualizarTarea"
+      produces:
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Objeto Tarea"
+        required: true
+        schema:
+          $ref: "#/definitions/Tarea"
+      responses:
+        default:
+          description: "Tarea actualizada con exito" 
+          
+  /tarea/borrar:
+    post:
+      tags:
+      - "tareas"
+      summary: "Eliminar tarea a traves del ID de la tarea"
+      description: "Esta operacion solo puede ser realizada si el usuario esta logueado y si fue el mismo usuario que la creó"
+      operationId: "EliminarTarea"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/xml"
+      parameters:
+      - name: "codigo"
+        in: "formData"
+        description: "Codigo de tarea"
+        required: true
+        type: "number"
+        format: "decimal"
+      responses:
+        default:
+          description: "Tarea eliminada con exito"  
+/user/consultar:
+    get:
+      tags:
+      - "tareas"
+      summary: "Consultar Tareas"
+      description: "Esta operacion solo puede ser realizada si el usuario esta logueado y si fue el mismo usuario que la creó"
+      operationId: "ConsultarTareas"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "consulta"
+        in: "query"
+        description: "Permite la realizacion de condicion SQL a los campos Estado y Autor de la tabla Tareas antecedido por un WHERE (Nota: El servicio anula cualquier condicion que quiera consultar otros campos diferentes a estos dos) " 
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Operacion satisfactoria"
+          schema:
+            type: "string"
+        400:
+          description: "Consulta invalida"
+
+securityDefinitions:
+  tarea_auth:
+    type: "basic"
+definitions:
+  Tarea:
+    type: "object"
+    required:
+     - "fecha_creacion"
+     - "sesion"
+     - "autor"
+    properties:
+      fecha_creacion:
+        type: "object"
+        format: "date-time"
+        description: "Fecha de creación de la tarea"
+      descripcion:
+        type: "string"
+        description: "Descripcioón de la tarea (Opcional)"
+      estado:
+        type: "string"
+        description: "Estado de la tarea (Opcional)"
+      fecha_vencimiento:
+        type: "object"
+        format: "date-time"
+        description: "Fecha de vencimiento de la tarea (opcional)"
+      autor:
+        type: "number"
+        format: "decimal"
+        description: "Codigo de la persona que creó de la tarea (opcional)"
+      sesion:
+        type: "boolean"
+        description: "True si existe una sesion activa - False en otro caso"
+    xml:
+      name: "Tarea"
+
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"

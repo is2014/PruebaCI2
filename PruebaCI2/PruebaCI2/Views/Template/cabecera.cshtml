@@ -1,0 +1,8 @@
+﻿<header>
+    <div class="container">
+        <img src="@Url.Content("~/Content/images/logo.png")" />
+        <div style="float:right; color:black !important; font-weight:bold">
+            Sesion activa:  @Session["user"] | <a href="@Url.Action("CerrarSesion", "Usuario",new { user = Session["user"] })" class="badge badge-danger">Cerrar sesion</a>
+        </div>
+    </div>
+</header>

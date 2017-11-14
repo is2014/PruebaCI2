@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ConsultarTareas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consulta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sesion" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarTareasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarTareasResult" type="tns:ArrayOfTareaResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTareaResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TareaResponse" nillable="true" type="tns:TareaResponse" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TareaResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Codigo" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha_creacion" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha_vencimiento" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Autor" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CrearTarea">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fecha_creacion" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fecha_vencimiento" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="autor" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="sesion" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearTareaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearTareaResult" type="tns:TareaResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarTarea">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tarea" type="tns:Tareas" />
+            <s:element minOccurs="1" maxOccurs="1" name="sesion_activa" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="usuario" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Tareas">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Codigo_tarea" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha_creacion" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha_vencimiento" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Autor" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ActualizarTareaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarTareaResult" type="tns:TareaResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarTarea">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigo" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="sesion_activa" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="usuario" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarTareaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ArrayOfTareaResponse" nillable="true" type="tns:ArrayOfTareaResponse" />
+      <s:element name="TareaResponse" nillable="true" type="tns:TareaResponse" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultarTareasSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarTareas" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarTareasSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarTareasResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearTareaSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearTarea" />
+  </wsdl:message>
+  <wsdl:message name="CrearTareaSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearTareaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarTareaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarTarea" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarTareaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarTareaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarTareaSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarTarea" />
+  </wsdl:message>
+  <wsdl:message name="EliminarTareaSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarTareaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarTareasHttpGetIn">
+    <wsdl:part name="consulta" type="s:string" />
+    <wsdl:part name="sesion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarTareasHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTareaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearTareaHttpGetIn">
+    <wsdl:part name="fecha_creacion" type="s:string" />
+    <wsdl:part name="descripcion" type="s:string" />
+    <wsdl:part name="estado" type="s:string" />
+    <wsdl:part name="fecha_vencimiento" type="s:string" />
+    <wsdl:part name="autor" type="s:string" />
+    <wsdl:part name="sesion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CrearTareaHttpGetOut">
+    <wsdl:part name="Body" element="tns:TareaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarTareaHttpGetIn">
+    <wsdl:part name="codigo" type="s:string" />
+    <wsdl:part name="sesion_activa" type="s:string" />
+    <wsdl:part name="usuario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EliminarTareaHttpGetOut" />
+  <wsdl:message name="ConsultarTareasHttpPostIn">
+    <wsdl:part name="consulta" type="s:string" />
+    <wsdl:part name="sesion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarTareasHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTareaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearTareaHttpPostIn">
+    <wsdl:part name="fecha_creacion" type="s:string" />
+    <wsdl:part name="descripcion" type="s:string" />
+    <wsdl:part name="estado" type="s:string" />
+    <wsdl:part name="fecha_vencimiento" type="s:string" />
+    <wsdl:part name="autor" type="s:string" />
+    <wsdl:part name="sesion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CrearTareaHttpPostOut">
+    <wsdl:part name="Body" element="tns:TareaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarTareaHttpPostIn">
+    <wsdl:part name="codigo" type="s:string" />
+    <wsdl:part name="sesion_activa" type="s:string" />
+    <wsdl:part name="usuario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EliminarTareaHttpPostOut" />
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="ConsultarTareas">
+      <wsdl:input message="tns:ConsultarTareasSoapIn" />
+      <wsdl:output message="tns:ConsultarTareasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearTarea">
+      <wsdl:input message="tns:CrearTareaSoapIn" />
+      <wsdl:output message="tns:CrearTareaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTarea">
+      <wsdl:input message="tns:ActualizarTareaSoapIn" />
+      <wsdl:output message="tns:ActualizarTareaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTarea">
+      <wsdl:input message="tns:EliminarTareaSoapIn" />
+      <wsdl:output message="tns:EliminarTareaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebServiceHttpGet">
+    <wsdl:operation name="ConsultarTareas">
+      <wsdl:input message="tns:ConsultarTareasHttpGetIn" />
+      <wsdl:output message="tns:ConsultarTareasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearTarea">
+      <wsdl:input message="tns:CrearTareaHttpGetIn" />
+      <wsdl:output message="tns:CrearTareaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTarea">
+      <wsdl:input message="tns:EliminarTareaHttpGetIn" />
+      <wsdl:output message="tns:EliminarTareaHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebServiceHttpPost">
+    <wsdl:operation name="ConsultarTareas">
+      <wsdl:input message="tns:ConsultarTareasHttpPostIn" />
+      <wsdl:output message="tns:ConsultarTareasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearTarea">
+      <wsdl:input message="tns:CrearTareaHttpPostIn" />
+      <wsdl:output message="tns:CrearTareaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTarea">
+      <wsdl:input message="tns:EliminarTareaHttpPostIn" />
+      <wsdl:output message="tns:EliminarTareaHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarTareas">
+      <soap:operation soapAction="http://tempuri.org/ConsultarTareas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearTarea">
+      <soap:operation soapAction="http://tempuri.org/CrearTarea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTarea">
+      <soap:operation soapAction="http://tempuri.org/ActualizarTarea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTarea">
+      <soap:operation soapAction="http://tempuri.org/EliminarTarea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarTareas">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarTareas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearTarea">
+      <soap12:operation soapAction="http://tempuri.org/CrearTarea" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarTarea">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarTarea" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTarea">
+      <soap12:operation soapAction="http://tempuri.org/EliminarTarea" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceHttpGet" type="tns:WebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ConsultarTareas">
+      <http:operation location="/ConsultarTareas" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearTarea">
+      <http:operation location="/CrearTarea" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTarea">
+      <http:operation location="/EliminarTarea" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceHttpPost" type="tns:WebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ConsultarTareas">
+      <http:operation location="/ConsultarTareas" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearTarea">
+      <http:operation location="/CrearTarea" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarTarea">
+      <http:operation location="/EliminarTarea" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://localhost:56119/Webservices/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://localhost:56119/Webservices/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceHttpGet" binding="tns:WebServiceHttpGet">
+      <http:address location="http://localhost:56119/Webservices/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceHttpPost" binding="tns:WebServiceHttpPost">
+      <http:address location="http://localhost:56119/Webservices/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

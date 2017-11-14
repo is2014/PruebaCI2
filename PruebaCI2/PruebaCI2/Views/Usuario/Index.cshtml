@@ -1,0 +1,52 @@
+﻿@model PruebaCI2.Models.UsuarioModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - Login</title>
+    <script src="@Url.Content("~/Content/js/jquery-3.2.1.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/bootstrap.bundle.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/less.min.js")"></script>
+    <link href="@Url.Content("~/Content/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/main.less")" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="page_main">
+
+        @Html.Partial("~/Views/Template/cabecera.cshtml")
+        <section id="cuerpo">
+            <div class="container">
+                <div id="container-small">
+                    <form class="form-signin" method="post" action="Login">
+                        <center><h2 class="form-signin-heading">***** Por favor Loguearse *****</h2></center>
+                        @Html.LabelFor(model => model.Usuario, new { @class = "sr-only" })
+                        @Html.TextBoxFor(model => model.Usuario, null, new { @class = "form-control", placeholder = "Nombre de usuario" })
+                        @Html.ValidationMessage("usuario_mensaje", new { @class = "label label-danger" })
+
+                        @Html.LabelFor(model => model.Contrasena, new { @class = "sr-only" })
+                        @Html.PasswordFor(model => model.Contrasena, new { @class = "form-control", placeholder = "********" })
+                        @Html.ValidationMessage("contrasena_mensaje", new { @class = "label label-danger" })
+
+                        <div class="checkbox">
+                            <label>
+                                @Html.CheckBoxFor(model => model.Remember, new { @class = "checkbox" }) Remember me
+                            </label>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        @Html.Partial("~/Views/Template/piepagina.cshtml")
+    </div>
+    @Html.Raw(TempData["logueo"])
+</body>
+</html>
+
